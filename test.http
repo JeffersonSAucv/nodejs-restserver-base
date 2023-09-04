@@ -1,0 +1,34 @@
+POST http://localhost:8080/api/usuarios
+content-type: application/json
+
+{
+    "nombre" : "jefferson",
+    "edad" : 25,
+    "contacto" : 34,
+    "casa" : "dsdasdsa"
+}
+
+###
+
+PUT http://localhost:8080/api/usuarios/14
+content-type: application/json
+
+{
+    "nombre" : "jefferson",
+    "edad" : 25,
+    "contacto" : 34,
+    "casa" : "dsdasdsa"
+}
+
+
+###
+
+GET http://localhost:8080/api/usuarios?q=hola&limit=10
+content-type: application/json
+
+{
+    "nombre" : "jefferson",
+    "edad" : 25,
+    "contacto" : 34,
+    "casa" : "dsdasdsa"
+}
