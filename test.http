@@ -1,16 +1,38 @@
+
 POST http://localhost:8080/api/usuarios
 content-type: application/json
 
 {
-    "nombre" : "jefferson",
-    "edad" : 25,
-    "contacto" : 34,
-    "casa" : "dsdasdsa"
+    "nombre" : "test16",
+    "google" : true,
+    "nuevoCampo" : true,
+    "correo" : "test16@test.com",
+    "password" : "123456",
+    "rol" : "USER_ROLE"
 }
 
 ###
 
-PUT http://localhost:8080/api/usuarios/14
+PUT http://localhost:8080/api/usuarios/64f80c5b235781379f4c8fc7
+content-type: application/json
+
+{
+    "nombre" : "leidy 2",
+    "google" : true,
+    "correo" : "leiday@testa4.com",
+    "password" : "123456",
+    "rol" : "VENTAS_ROLE"
+}
+
+###
+
+DELETE  http://localhost:8080/api/usuarios/64fe54ea7c5a015e6bf1032b
+content-type: application/json
+
+
+###
+
+GET http://localhost:8080/api/usuarios?limite=18
 content-type: application/json
 
 {
@@ -20,14 +42,12 @@ content-type: application/json
     "casa" : "dsdasdsa"
 }
 
-
 ###
-
-GET http://localhost:8080/api/usuarios?q=hola&limit=10
+GET https://nodejs-restserver-base-production.up.railway.app/api/usuarios?q=slasho&limit=10
 content-type: application/json
 
 {
-    "nombre" : "jefferson",
+    "nombre" : "SLASHO",
     "edad" : 25,
     "contacto" : 34,
     "casa" : "dsdasdsa"
