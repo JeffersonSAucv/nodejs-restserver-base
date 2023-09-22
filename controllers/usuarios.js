@@ -66,13 +66,11 @@ const usuariosGet=  async (req = request, res = response) => {
     
     const {id} = req.params
 
-    //fisicamente lo borramos
-
-    // const usuario = await Usuario.findByIdAndDelete(id);
-
+    //const uid = req.uid; //Se recibe del token creado en el header se pasa por referencia
+  
      const usuario = await Usuario.findByIdAndUpdate(id, {estado : false})
-
-    res.json(usuario);
+     //const usuarioAutenticado = req.usuario;
+      res.json(usuario);
   }
    const usuariosPatch = (req, res = response) => {
     res.json({

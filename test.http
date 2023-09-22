@@ -1,4 +1,21 @@
 
+POST https://nodejs-restserver-base-production.up.railway.app/api/usuarios
+content-type: application/json
+
+{
+    "nombre" : "test16",
+    "google" : true,
+    "nuevoCampo" : true,
+    "correo" : "test16@test.com",
+    "password" : "123456",
+    "rol" : "USER_ROLE"
+}
+
+
+
+
+###
+
 POST http://localhost:8080/api/usuarios
 content-type: application/json
 
@@ -26,7 +43,19 @@ content-type: application/json
 
 ###
 
-DELETE  http://localhost:8080/api/usuarios/64fe54ea7c5a015e6bf1032b
+DELETE  https://nodejs-restserver-base-production.up.railway.app/api/usuarios/64fe54fe7c5a015e6bf1032f
+content-type: application/json
+x-token:
+
+###
+
+DELETE  http://localhost:8080/api/usuarios/64fe54fe7c5a015e6bf1032f
+content-type: application/json
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NGZlNTRlYTdjNWEwMTVlNmJmMTAzMmIiLCJvY3VsdG8iOiJlbGxhIG5vIHRlIGFtYSB1dSIsImlhdCI6MTY5NTM1OTE1NywiZXhwIjoxNjk1MzczNTU3fQ.ZiJ2WrvPB8BfC3irBpU-t6y3kepRlaLcB3uxvesLeLE
+
+### 
+//SIN TOKEN 
+DELETE  http://localhost:8080/api/usuarios/64fe54fe7c5a015e6bf1032f
 content-type: application/json
 
 
@@ -43,6 +72,11 @@ content-type: application/json
 }
 
 ###
+GET https://nodejs-restserver-base-production.up.railway.app/api/usuarios?limite=100
+content-type: application/json
+
+
+###
 GET https://nodejs-restserver-base-production.up.railway.app/api/usuarios?q=slasho&limit=10
 content-type: application/json
 
@@ -52,3 +86,20 @@ content-type: application/json
     "contacto" : 34,
     "casa" : "dsdasdsa"
 }
+
+// LOGIN
+
+###
+POST http://localhost:8080/api/auth
+content-type: application/json
+
+{
+
+    "correo" : "leidy@test.com",
+    "password" : "123456"
+   
+}
+
+
+###
+GET https://agrovision.agritracer.pe/web-api/api/controlbus/Externos/ListadoViajesProgramacion
