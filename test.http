@@ -136,3 +136,11 @@ content-type: application/json
 DELETE http://localhost:8080/api/categorias/6516498de8ee3d0d27b4067f
 content-type: application/json
 x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NGZlNTRlYTdjNWEwMTVlNmJmMTAzMmIiLCJvY3VsdG8iOiJlbGxhIG5vIHRlIGFtYSB1dSIsImlhdCI6MTY5NjAzNzg5NywiZXhwIjoxNjk2MDUyMjk3fQ.dCiSaWxLACgyYHepIblKMoPgTM8LqWmBROpJ5l-woQI
+
+###
+GET http://localhost:8080/api/productos
+content-type: application/json
+
+###
+GET http://localhost:8080/api/productos/651b82a98dac8a8cfd9c150c
+content-type: application/json
