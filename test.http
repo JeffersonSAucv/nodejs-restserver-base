@@ -11,9 +11,6 @@ content-type: application/json
     "rol" : "USER_ROLE"
 }
 
-
-
-
 ###
 
 POST http://localhost:8080/api/usuarios
@@ -138,9 +135,40 @@ content-type: application/json
 x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NGZlNTRlYTdjNWEwMTVlNmJmMTAzMmIiLCJvY3VsdG8iOiJlbGxhIG5vIHRlIGFtYSB1dSIsImlhdCI6MTY5NjAzNzg5NywiZXhwIjoxNjk2MDUyMjk3fQ.dCiSaWxLACgyYHepIblKMoPgTM8LqWmBROpJ5l-woQI
 
 ###
-GET http://localhost:8080/api/productos
+GET http://localhost:8080/api/productos?limite=100
 content-type: application/json
 
 ###
 GET http://localhost:8080/api/productos/651b82a98dac8a8cfd9c150c
 content-type: application/json
+
+
+###  BUSCAR  USUARIO POR ID 
+GET http://localhost:8080/api/buscar/usuarios/64fe54ea7c5a015e6bf1032b
+content-type: application/json
+
+
+###  BUSCAR  USUARIO POR NOMBRE 
+GET http://localhost:8080/api/buscar/usuarios/lEidy
+content-type: application/json
+
+
+###  BUSCAR  PRODUCTO POR ID 
+GET http://localhost:8080/api/buscar/productos/651b93693679c4ed9376f35c
+content-type: application/json
+
+
+###  BUSCAR  PRODUCTO POR NOMBRE 
+GET http://localhost:8080/api/buscar/productos/HARRY
+content-type: application/json
+
+###  BUSCAR  CATEOGRIAS POR ID 
+GET http://localhost:8080/api/buscar/categorias/651b6145f1d0c4805c027f41
+content-type: application/json
+
+
+###  BUSCAR  CATEGORIAS POR NOMBRE 
+GET http://localhost:8080/api/buscar/categorias/libros
+content-type: application/json
+
+

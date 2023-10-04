@@ -15,6 +15,7 @@ class Server {
       categorias: '/api/categorias',
       usarios:    '/api/usuarios',
       productos:    '/api/productos',
+      buscar:    '/api/buscar',
     }
 
 
@@ -47,6 +48,7 @@ class Server {
     this.app.use(this.paths.usarios, require("../routes/usuarios"));
     this.app.use(this.paths.categorias, require("../routes/categorias"));
     this.app.use(this.paths.productos, require("../routes/productos"));
+    this.app.use(this.paths.buscar, require("../routes/buscar"));
   }
 
   listen() {
