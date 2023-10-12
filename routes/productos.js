@@ -23,7 +23,7 @@ router.get("/:id",[
 //crear producto
 
 router.post("/",[
-    validarJWT,
+    //validarJWT,
     check('nombre', 'El nombre es obligatorio').not().isEmpty(),
     check('categoria', 'El ID ingresado, no es un ID de Mongo válido').isMongoId(),
     validarCampos
@@ -31,7 +31,7 @@ router.post("/",[
 
 // Actualizar - Privado - Cualquiera con token valido
 router.put("/:id", [
-    validarJWT,
+    //validarJWT,
     check('nombre', 'El nombre es obligatorio').not().isEmpty(),
     check('categoria', 'El ID ingresado, no es un ID de Mongo válido').isMongoId(),
     check('disponible', 'el estado es invalido').isBoolean(),
@@ -41,7 +41,7 @@ router.put("/:id", [
 
 // Borrar - Privado - Con Rol Admin
 router.delete("/:id",[
-    validarJWT,
+    //validarJWT,
     check('id', 'No es un ID de mongo válido').isMongoId(),
     check('id').custom(existeProducto),
     validarCampos

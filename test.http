@@ -139,6 +139,15 @@ GET http://localhost:8080/api/productos?limite=100
 content-type: application/json
 
 ###
+https://nodejs-restserver-base-production.up.railway.app/api/productos?limite=100
+content-type: application/json
+
+###
+https://nodejs-restserver-base-production.up.railway.app/api/categorias?limite=10
+content-type: application/json
+
+
+###
 GET http://localhost:8080/api/productos/651b82a98dac8a8cfd9c150c
 content-type: application/json
 
@@ -162,6 +171,10 @@ content-type: application/json
 GET http://localhost:8080/api/buscar/productos/HARRY
 content-type: application/json
 
+###  BUSCAR  PRODUCTO POR NOMBRE  PROD
+GET https://nodejs-restserver-base-production.up.railway.app/api/buscar/productos/HARRY
+content-type: application/json
+
 ###  BUSCAR  CATEOGRIAS POR ID 
 GET http://localhost:8080/api/buscar/categorias/651b6145f1d0c4805c027f41
 content-type: application/json
@@ -171,4 +184,29 @@ content-type: application/json
 GET http://localhost:8080/api/buscar/categorias/libros
 content-type: application/json
 
+### BUSQUEDA EN PROD
+GET https://nodejs-restserver-base-production.up.railway.app/api/buscar/categorias/651b6145f1d0c4805c027f41
+content-type: application/json
 
+
+### BUSQUEDA EN PROD
+GET https://nodejs-restserver-base-production.up.railway.app/api/buscar/usuarios/l
+content-type: application/json
+
+
+###CREAR PRODUCTO PROD
+
+POST https://nodejs-restserver-base-production.up.railway.app/api/productos
+content-type: application/json
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NGZlNTRlYTdjNWEwMTVlNmJmMTAzMmIiLCJvY3VsdG8iOiJlbGxhIG5vIHRlIGFtYSB1dSIsImlhdCI6MTY5NjgxNDYwMywiZXhwIjoxNjk2ODI5MDAzfQ.ec9WtS1nAVIll0B8bydR-cqwXsjlkRcNhgVeKlul94Q
+
+{
+    "nombre" : "CASINO MANJAR",
+    "categoria": "6516498de8ee3d0d27b4067f", 
+    "descripcion" : "LOREM IPSUM",
+    "disponible" : 1
+}
+
+
+
+DELETE 
