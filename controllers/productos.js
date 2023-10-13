@@ -51,7 +51,7 @@ const crearProducto =async (req , res = response)=>{
         disponible: body.disponible,
         precio: body.precio,
         //usuario: req.usuario._id  // esta validacion viene desdel el X-token ahi obtiene el usuario id
-        usuario: body
+        usuario: body.id
     }
     
     const producto = new Producto(data);
