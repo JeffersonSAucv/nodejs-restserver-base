@@ -198,10 +198,10 @@ content-type: application/json
 
 POST https://nodejs-restserver-base-production.up.railway.app/api/productos
 content-type: application/json
-x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NGZlNTRlYTdjNWEwMTVlNmJmMTAzMmIiLCJvY3VsdG8iOiJlbGxhIG5vIHRlIGFtYSB1dSIsImlhdCI6MTY5NjgxNDYwMywiZXhwIjoxNjk2ODI5MDAzfQ.ec9WtS1nAVIll0B8bydR-cqwXsjlkRcNhgVeKlul94Q
+//x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NGZlNTRlYTdjNWEwMTVlNmJmMTAzMmIiLCJvY3VsdG8iOiJlbGxhIG5vIHRlIGFtYSB1dSIsImlhdCI6MTY5NjgxNDYwMywiZXhwIjoxNjk2ODI5MDAzfQ.ec9WtS1nAVIll0B8bydR-cqwXsjlkRcNhgVeKlul94Q
 
 {
-    "nombre" : "CASINO MANJAR",
+    "nombre" : "CASINO MANJAR 2",
     "categoria": "6516498de8ee3d0d27b4067f", 
     "descripcion" : "LOREM IPSUM",
     "disponible" : 1
@@ -209,4 +209,3 @@ x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NGZlNTRlYTdjNWEwMTVlNm
 
 
 
-DELETE 
