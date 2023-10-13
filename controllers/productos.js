@@ -30,40 +30,87 @@ const obtenerProducto = async (req = request, res = response)=>{
     
 }
 
-const crearProducto =async (req , res = response)=>{
-
-    const {estado,usuario, ...body}  = req.body;
+// const crearProducto =async (req , res = response)=>{
+//     try {
+//     const {estado,usuario, ...body}  = req.body;
     
-    const productoDB = await  Producto.findOne({nombre : body.nombre});
+//     console.log(body.nombre);
+//     const productoDB = await  Producto.findOne({nombre : body.nombre});
+//     console.log(productoDB);
 
-    if(productoDB){
-        return res.status(400).json({
-            msg : `El producto ${productoDB.nombre} ya existe en BD`
-        })
-    }
+//     if(productoDB){
+//         return res.status(400).json({
+//             msg : `El producto ${productoDB.nombre} ya existe en BD`
+//         })
+//     }
 
-    // Generar la data a guardar
+//     // Generar la data a guardar
 
-    const data = {
-        nombre : body.nombre.toUpperCase(),
-        categoria: body.categoria,
-        descripcion : body.descripcion ,
-        disponible: body.disponible,
-        precio: body.precio,
-        //usuario: req.usuario._id  // esta validacion viene desdel el X-token ahi obtiene el usuario id
-        usuario: body.id
-    }
+//     const data = {
+//         nombre : body.nombre.toUpperCase(),
+//         categoria: body.categoria,
+//         descripcion : body.descripcion ,
+//         disponible: body.disponible,
+//         precio: body.precio,
+//         //usuario: req.usuario._id
+//         usuario: '64fe54ea7c5a015e6bf1032b'
+//     }
     
-    const producto = new Producto(data);
+//     const producto = new Producto(data);
 
-    //Guardar en DB
+//     //Guardar en DB
 
-    await producto.save();
+//     await producto.save();
 
-    res.status(201).json(producto);
-}
+//     res.status(201).json(producto);
+
+// } catch (error) {
+//     console.error(error);
+//     res.status(500).json({
+//         msg: 'Hubo un error al crear el producto. Por favor, inténtalo de nuevo.'
+//     });
+// }
+// };
+
+
 
 // actualizarCategoria
+
+const crearProducto = async (req, res = response) => {
+    try {
+        const { estado, usuario, ...body } = req.body;
+
+        // Generar la data a guardar
+        const data = {
+            nombre: body.nombre.toUpperCase(),
+            categoria: body.categoria,
+            descripcion: body.descripcion,
+            disponible: body.disponible,
+            precio: body.precio,
+            usuario: '64fe54ea7c5a015e6bf1032b' // Cambiar por la lógica de autenticación
+        };
+
+        const producto = new Producto(data);
+
+        // Guardar en DB
+        await producto.save();
+
+        res.status(201).json(producto);
+    } catch (error) {
+        if (error.code === 11000) {
+            // Error de clave duplicada
+            res.status(400).json({
+                msg: 'El producto ya existe en la base de datos.'
+            });
+        } else {
+            // Otro tipo de error
+            console.error(error);
+            res.status(500).json({
+                msg: 'Hubo un error al crear el producto. Por favor, inténtalo de nuevo.'
+            });
+        }
+    }
+};
 
 const actualizarProducto =async (req , res = response)=>{
     const {id} = req.params;
