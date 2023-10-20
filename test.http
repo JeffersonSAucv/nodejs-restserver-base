@@ -210,17 +210,27 @@ content-type: application/json
 
 ###
 POST http://localhost:8080/api/productos
-
 content-type: application/json
-//x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NGZlNTRlYTdjNWEwMTVlNmJmMTAzMmIiLCJvY3VsdG8iOiJlbGxhIG5vIHRlIGFtYSB1dSIsImlhdCI6MTY5NjgxNDYwMywiZXhwIjoxNjk2ODI5MDAzfQ.ec9WtS1nAVIll0B8bydR-cqwXsjlkRcNhgVeKlul94Q
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NGZlNTRlYTdjNWEwMTVlNmJmMTAzMmIiLCJvY3VsdG8iOiJlbGxhIG5vIHRlIGFtYSB1eCIsImlhdCI6MTY5NzI0NTkyNCwiZXhwIjoxNjk3MjYwMzI0fQ.LxnpstjXQSbPIm2vKWHxZgxv1d01Q_yq5Ty_QszQP_k
 
 {
-    "nombre" : "CASINO MANJAR 2",
+    "nombre" : "RITZ OREO 2",
     "categoria": "6516498de8ee3d0d27b4067f", 
-    "descripcion" : "LOREM IPSUM",
+    "descripcion" : "LOREM IPSUM 2",
     "disponible" : 1
-    //"id" : "64fe54ea7c5a015e6bf1032b"
 }
 
 
 
+// LOGIN
+
+###
+POST http://localhost:8080/api/auth
+content-type: application/json
+
+{
+
+    "correo" : "leidy@test.com",
+    "password" : "123456"
+   
+}

@@ -6,6 +6,7 @@ const jwt = require('jsonwebtoken');
 const validarJWT = async  (req = request, res = response, next) =>{
         
         const token = req.header('x-token');
+        console.log('x-token', req.header('x-token'));
 
         if (!token) {
             
@@ -15,9 +16,10 @@ const validarJWT = async  (req = request, res = response, next) =>{
         }
 
         try {
-            
-             const {uid} =  jwt.verify(token, process.env.SECRETORPRIVATEKEY);
+        
 
+             const {uid} =  jwt.verify(token, process.env.SECRETORPRIVATEKEY);
+            console.log('validacion token',  jwt.verify(token, process.env.SECRETORPRIVATEKEY));
              //leer el usuario que corresponde uid
              const usuario= await Usuario.findById(uid);
 

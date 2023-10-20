@@ -79,7 +79,8 @@ const obtenerProducto = async (req = request, res = response)=>{
 const crearProducto = async (req, res = response) => {
     try {
         const { estado, usuario, ...body } = req.body;
-
+        console.log('body al crear produto',req.body);
+        console.log('body al crear produto USUARIO ID',req.usuario._id);
         // Generar la data a guardar
         const data = {
             nombre: body.nombre.toUpperCase(),
@@ -87,7 +88,8 @@ const crearProducto = async (req, res = response) => {
             descripcion: body.descripcion,
             disponible: body.disponible,
             precio: body.precio,
-            usuario: '64fe54ea7c5a015e6bf1032b' // Cambiar por la lógica de autenticación
+            usuario: req.usuario._id  // Cambiar por la lógica de autenticación
+            // usuario: '64fe54ea7c5a015e6bf1032b' // Cambiar por la lógica de autenticación
         };
 
         const producto = new Producto(data);

@@ -7,6 +7,7 @@ const login = async (req, res = response) => {
 
     const { correo, password} = req.body;
 
+    console.log('req.body', req.body);
     try {
 
 
