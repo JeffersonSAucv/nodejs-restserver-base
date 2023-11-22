@@ -26,6 +26,7 @@ router.post("/",[
     validarJWT,
     check('nombre', 'El nombre es obligatorio').not().isEmpty(),
     check('categoria', 'El ID ingresado, no es un ID de Mongo válido').isMongoId(),
+    check('fotoUrl', 'La URL de la imagen es obligatoria').not().isEmpty(),
     validarCampos
 ], crearProducto)
 
@@ -35,6 +36,7 @@ router.put("/:id", [
     check('nombre', 'El nombre es obligatorio').not().isEmpty(),
     check('categoria', 'El ID ingresado, no es un ID de Mongo válido').isMongoId(),
     check('disponible', 'el estado es invalido').isBoolean(),
+    check('fotoUrl', 'La URL de la imagen es obligatoria').not().isEmpty(),
     check('id').custom(existeProducto),
     validarCampos
   ],actualizarProducto)

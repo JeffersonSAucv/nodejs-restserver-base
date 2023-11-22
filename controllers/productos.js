@@ -88,6 +88,7 @@ const crearProducto = async (req, res = response) => {
             descripcion: body.descripcion,
             disponible: body.disponible,
             precio: body.precio,
+            fotoUrl: body.fotoUrl,
             usuario: req.usuario._id  // Cambiar por la lógica de autenticación
             // usuario: '64fe54ea7c5a015e6bf1032b' // Cambiar por la lógica de autenticación
         };
@@ -99,6 +100,7 @@ const crearProducto = async (req, res = response) => {
 
         res.status(201).json(producto);
     } catch (error) {
+        console.log(error);
         if (error.code === 11000) {
             // Error de clave duplicada
             res.status(400).json({

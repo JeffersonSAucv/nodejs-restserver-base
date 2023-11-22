@@ -3,12 +3,12 @@ POST https://nodejs-restserver-base-production.up.railway.app/api/usuarios
 content-type: application/json
 
 {
-    "nombre" : "lucas",
+    "nombre" : "admin",
     "google" : true,
     "nuevoCampo" : true,
-    "correo" : "lucaseljedi@test.com",
+    "correo" : "admin@test.com",
     "password" : "123456",
-    "rol" : "USER_ROLE"
+    "rol" : "ADMIN_ROLE"
 }
 
 ###
@@ -17,10 +17,10 @@ POST http://localhost:8080/api/usuarios
 content-type: application/json
 
 {
-    "nombre" : "test16",
-    "google" : true,
-    "nuevoCampo" : true,
-    "correo" : "test16@test.com",
+    "nombre" : "dummy",
+    //"google" : true,
+    //"nuevoCampo" : true,
+    "correo" : "dummy@test.com",
     "password" : "123456",
     "rol" : "USER_ROLE"
 }
@@ -103,7 +103,7 @@ content-type: application/json
 
 {
 
-    "correo" : "leidy@test.com",
+    "correo" : "admin@test.com",
     "password" : "123456"
    
 }
@@ -116,6 +116,8 @@ content-type: application/json
 ###
 GET http://localhost:8080/api/categorias/651749ad911973d6eae8f906
 content-type: application/json
+
+
 ###
 POST http://localhost:8080/api/categorias
 x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NGZlNTRlYTdjNWEwMTVlNmJmMTAzMmIiLCJvY3VsdG8iOiJlbGxhIG5vIHRlIGFtYSB1dSIsImlhdCI6MTY5NTk1ODA0NywiZXhwIjoxNjk1OTcyNDQ3fQ.T-r8z8DilpmCIDJ3EpvAkxQwb2e4FJ4lKX-OpULKbJ8
@@ -211,13 +213,14 @@ content-type: application/json
 ###
 POST http://localhost:8080/api/productos
 content-type: application/json
-x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NGZlNTRlYTdjNWEwMTVlNmJmMTAzMmIiLCJvY3VsdG8iOiJlbGxhIG5vIHRlIGFtYSB1eCIsImlhdCI6MTY5NzI0NTkyNCwiZXhwIjoxNjk3MjYwMzI0fQ.LxnpstjXQSbPIm2vKWHxZgxv1d01Q_yq5Ty_QszQP_k
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTMyZWQ5M2MzZTE1MmI4Y2RmZDA5M2UiLCJvY3VsdG8iOiJlbGxhIG5vIHRlIGFtYSB1dSIsImlhdCI6MTY5OTMyNTE3NCwiZXhwIjoxNjk5MzM5NTc0fQ.1bVh1dILO3IJnYX8y-pXs_RivzgFionYeP7Iu6N_v54
 
 {
-    "nombre" : "RITZ OREO 2",
-    "categoria": "6516498de8ee3d0d27b4067f", 
+    "nombre" : "FANTA 500 ml",
+    "categoria": "64fe54ea7c5a015e6bf1032b", 
     "descripcion" : "LOREM IPSUM 2",
-    "disponible" : 1
+    "disponible" : 1,
+    "fotoUrl": "https://pngfre.com/wp-content/uploads/Fanta-1-300x300.png"
 }
 
 
@@ -230,7 +233,7 @@ content-type: application/json
 
 {
 
-    "correo" : "leidy@test.com",
+    "correo" : "admin@test.com",
     "password" : "123456"
    
 }

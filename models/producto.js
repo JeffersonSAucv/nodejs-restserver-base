@@ -4,7 +4,7 @@ const ProductoSchema = Schema({
     nombre: {
         type: String,
         required: [true, 'El nombre es obligatorio'],
-        unique: true
+       // unique: true
     },
     estado: {
         type: Boolean,
@@ -26,6 +26,10 @@ const ProductoSchema = Schema({
         required : true
     },
     descripcion : {type: String},
+    fotoUrl: {
+        type: String,
+        required: [true, 'La foto es obligatorias.'],
+    },
     disponible : {type: Boolean, default: true},
 
 })
